@@ -45,7 +45,7 @@ config.iota = {
         type: 'mongodb'
     },
     mongodb: {
-        host: 'mongo.default.svc.cluster.local',
+        host: 'mongo-mongodb.default.svc.cluster.local',
         port: '27017',
         db: 'iotagentul'
     },
