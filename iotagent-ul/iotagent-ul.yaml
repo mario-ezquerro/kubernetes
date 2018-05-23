@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iotagent-ul
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iotagent-ul
+  template:
+    metadata:
+      labels:
+        app: iotagent-ul
+    spec:
+      containers:
+      - name: iotagent-ul
+        image: fiware/iotagent-ul:1.6.0
+        ports:
+        - containerPort: 4041
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iotagent-ul
+  namespace: default
+spec:
+  selector:
+    app: iotagent-ul
+  type: NodePort
+  ports:
+  - port: 4041
+    protocol: TCP
+    targetPort: 4041
+    nodePort: 30001

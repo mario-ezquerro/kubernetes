@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: orion
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: orion.k8s.fiwoo.eu
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: orion
+          servicePort: 1026
