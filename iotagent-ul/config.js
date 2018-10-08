@@ -52,7 +52,7 @@ config.iota = {
     types: {},
     service: 'howtoService',
     subservice: '/howto',
-    providerUrl: 'http://ul-agent.k8s.fiwoo.eu',
+    providerUrl: 'http://ul-agent.k8s.secmotic.com',
     deviceRegistrationDuration: 'P2Y',
     defaultType: 'Thing'
 };
